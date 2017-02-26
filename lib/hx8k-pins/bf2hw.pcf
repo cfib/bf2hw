@@ -1,0 +1,4 @@
+set_io clk12      J3
+
+set_io SERIAL_TX  B12
+set_io SERIAL_RX  B10
