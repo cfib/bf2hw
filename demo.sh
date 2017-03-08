@@ -3,6 +3,11 @@
 PROJECT=$1
 SOURCE_DIR=bf-src
 
+# ------------------------------------------------------------------
+# This script executes the entire demo flow
+# ------------------------------------------------------------------
+
+
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R -N '
 
@@ -46,8 +51,8 @@ echo "Translating BF code to C"
 echo "**************************************************************"
 read
 
-# Convert BF source to C
-./bf2c.exe  < $SOURCE > bf2c_bambu_main.c 
+# Convert BF source to C, format it to be better human-readable
+./bf2c.exe  < $SOURCE | astyle --style=kr > bf2c_bambu_main.c
 
 clear
 echo "**************************************************************"
