@@ -8,13 +8,14 @@ int main(int argc, char **argv)
 {
 	FILE *in = stdin, *out = stdout;
 	int c;
-	int cellsize = 128;
+	int cellsize = MEMORY_SIZE;
 
 	fprintf(out,
 		"#include \"lib/bambu_io.h\"\n"
 		"int main(void)\n{\n"
-		"\tunsigned char mem[%d];\n"
-		"\tchar *cell = mem;\n", cellsize
+		"\tstatic unsigned char mem[%d];\n"
+		"\tchar *cell = mem;\n"
+		"\t\n", cellsize
 	);
 
 	while ((c = getc(in)) != EOF) {
@@ -31,5 +32,5 @@ int main(int argc, char **argv)
 		}
 	}
 	
-	fprintf(out, "\n\t;\n\treturn get();\n}\n\n");
+	fprintf(out, "\n\t;\n\twhile(1) get();\n\treturn 0;\n}\n\n");
 }
