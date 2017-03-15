@@ -1,4 +1,4 @@
-module bambu_putchar (input clock, input reset, input start_port, output [7:0] return_port, output reg done_port, input [7:0] c, output reg [7:0] TX_DATA, output reg TX_ENABLE, input TX_READY);
+module bambu_putchar (input clock, input reset, input start_port, output reg [7:0] return_port, output reg done_port, input [7:0] c, output reg [7:0] TX_DATA, output reg TX_ENABLE, input TX_READY);
     
     reg        fifo_read;
     wire [7:0] fifo_out;

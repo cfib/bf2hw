@@ -1,0 +1,87 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Wed Mar 15 21:40:37 2017
+[*]
+[dumpfile] "/home/christian/git/fibich/bf2hw/sim/bf2hw.vcd"
+[dumpfile_mtime] "Wed Mar 15 21:40:09 2017"
+[dumpfile_size] 3229820
+[savefile] "/home/christian/git/fibich/bf2hw/sim/wave.gtkw"
+[timestart] 0
+[size] 1920 1016
+[pos] -1 -1
+*-31.000000 220011480 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[treeopen] tb.dut.
+[treeopen] tb.dut.main.
+[treeopen] tb.dut.main.main_i0.
+[treeopen] tb.dut.main.main_i0.Datapath_i.
+[treeopen] tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.
+[sst_width] 580
+[signals_width] 298
+[sst_expanded] 1
+[sst_vpaned_height] 284
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.RX_DATA[7:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.RX_VALID
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.clock
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.done_port
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_empty
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_full
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_in[7:0]
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_out[7:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_read
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_state[1:0]
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.fifo_write
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.reset
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.return_port[15:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.rx_state[2:0]
+tb.dut.main.main_i0.Datapath_i.bambu_getchar_135_i0.start_port
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.TX_DATA[7:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.TX_ENABLE
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.TX_READY
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.c[7:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.clock
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.done_port
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_empty
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_full
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_in[7:0]
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_out[7:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_read
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_state[1:0]
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.fifo_write
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.reset
+@22
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.return_port[7:0]
+@28
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.start_port
+tb.dut.main.main_i0.Datapath_i.bambu_putchar_136_i0.tx_state[1:0]
+@22
+tb.dut.RX_DATA[7:0]
+@28
+tb.dut.RX_VALID
+tb.dut.SERIAL_RX
+tb.dut.SERIAL_TX
+tb.dut.TX_BUSY
+@22
+tb.dut.TX_DATA[7:0]
+@28
+tb.dut.TX_READY
+tb.dut.TX_WRITE
+tb.dut.clk12
+tb.dut.clock
+tb.dut.locked
+tb.dut.reset
+tb.dut.reset_sync[2:0]
+[pattern_trace] 1
+[pattern_trace] 0

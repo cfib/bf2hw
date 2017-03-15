@@ -22,6 +22,8 @@ module bambu_getchar (input clock, input reset, input start_port, output reg don
     localparam RX_STATE_IDLE = 3'b01,
                RX_STATE_WAIT_DATA = 3'b10,
                RX_DONE       = 3'b100;
+               
+
 
     always @(posedge clock or posedge reset)
     begin
@@ -50,7 +52,7 @@ module bambu_getchar (input clock, input reset, input start_port, output reg don
             rx_state  <= RX_STATE_IDLE;
             fifo_read <= 1'b0;
             done_port <= 1'b0;
-            return_port <= 8'b0;
+            return_port <= 16'b0;
         end else begin
             fifo_read <= 1'b0;
             case(rx_state)
@@ -66,7 +68,7 @@ module bambu_getchar (input clock, input reset, input start_port, output reg don
                         rx_state  <= RX_DONE;
                     end else begin
                         done_port   <= 1'b1;
-                        return_port <= {8'b0,fifo_out};
+                        return_port <= {16'b0};
                     end
                 end
                 RX_DONE : begin
