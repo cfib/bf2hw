@@ -6,6 +6,9 @@ Use Brainfuck as a Hardware Description Language!
 >
 > -- Jurassic Park
 
+Watch a demo: https://asciinema.org/a/dg84cqap9lxbniyy0wvrcf3gp
+
+
 ## How this works ##
 
 1. `bf2c.exe` converts the Brainfuck code to C
