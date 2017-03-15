@@ -29,6 +29,9 @@ Use Brainfuck as a Hardware Description Language!
 * `GTKWave` for displaying simulation waveforms
 * A Lattice HX8K breakout board
 
+The path to PandA Bambu is set to `$HOME/opt/panda/bin/bambu` in `bambu.sh`.
+You may need to change it according to your setup.
+
 ### Scripts ###
 
 #### Demo Script ####
