@@ -23,13 +23,13 @@ Watch a demo: https://asciinema.org/a/dg84cqap9lxbniyy0wvrcf3gp
 
 * PandA Bambu (http://panda.dei.polimi.it/?page_id=31)
 * Yosys, Icestorm Toolchain (http://www.clifford.at/icestorm/)
-* `source-highlight` (and `/usr/bin/src-hilite-lesspipe.sh`) for `demo.sh`
 * `figlet` for `demo.sh`
 * `tmux` for the ROT13 demo
 * `picocom`
 * `rot13` for the ROT13 demo (e.g., via `bsdgames` package on Debian)
 * `iverilog` for simulation
 * `GTKWave` for displaying simulation waveforms
+* (optionally) `source-highlight` (and `/usr/bin/src-hilite-lesspipe.sh`) for `demo.sh`
 * A Lattice HX8K breakout board
 
 The following udev rule is needed by `comm.sh` to automatically find the HX8K board:
