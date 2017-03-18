@@ -132,5 +132,9 @@ The toplevel testbench is very rudimentary. It just sends one byte over
 the serial interface to the DUT and then waits for some time. Works
 for the `hello` demo, but could definitely use some more work.
 
+## Acknowledgement ##
+
+* Fabrizio Ferrandi for feedback on blocking FUs
+
 
 
