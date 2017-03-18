@@ -1,4 +1,17 @@
-module bambu_getchar (input clock, input reset, input start_port, output reg done_port, output reg [15:0] return_port, input [7:0] RX_DATA, input RX_VALID);
+// BF2HW
+// Copyright (C) 2017  Christian Fibich
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+
+//
+// IP for the bambu_getchar() function. Reads a single character
+//
+
+
+module bambu_getchar (input clock, input reset, input start_port, output reg done_port, output reg [7:0] return_port, input [7:0] RX_DATA, input RX_VALID);
     
     reg  [7:0] data_reg;
     reg        fifo_read;
@@ -52,13 +65,13 @@ module bambu_getchar (input clock, input reset, input start_port, output reg don
             rx_state  <= RX_STATE_IDLE;
             fifo_read <= 1'b0;
             done_port <= 1'b0;
-            return_port <= 16'b0;
+            return_port <= 8'b0;
         end else begin
             fifo_read <= 1'b0;
+            done_port <= 1'b0;
             case(rx_state)
                 RX_STATE_IDLE : begin
                     if (start_port) begin
-                        done_port <= 1'b0;
                         rx_state  <= RX_STATE_WAIT_DATA;
                     end
                 end
@@ -66,14 +79,11 @@ module bambu_getchar (input clock, input reset, input start_port, output reg don
                     if (fifo_empty == 1'b0) begin
                         fifo_read <= 1'b1;
                         rx_state  <= RX_DONE;
-                    end else begin
-                        done_port   <= 1'b1;
-                        return_port <= {16'b0};
                     end
                 end
                 RX_DONE : begin
                     done_port   <= 1'b1;
-                    return_port <= {8'b1,fifo_out};
+                    return_port <= fifo_out;
                     rx_state    <= RX_STATE_IDLE;
                 end
             endcase

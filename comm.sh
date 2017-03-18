@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# BF2HW
+# Copyright (C) 2017  Christian Fibich
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+
 # ------------------------------------------------------------------
 # This script tries to find the ttyUSB device provided by the HX8K
 # breakout board and sets up the demo environment
@@ -7,10 +16,6 @@
 
 baud=9600
 
-lattice_idVendor="0403"
-lattice_idProduct="6010"
-
-dev=""
 
 PROJECT=$1
 dev=$2
@@ -26,23 +31,17 @@ case $PROJECT in
 esac
 
 
-# If no tty device is supplied, try to find the ttyUSB device
+# If no tty device is supplied, default to symlinked HX8K device
 if [ -z $dev ]; then
-
-   for devpath in $(find /sys/bus/usb/devices/usb*/ -path '*tty*' -name dev); do
-       usbdir="$(dirname $devpath)/../../../../"
-       devid=$(cat $devpath)
-       idVendor=$(cat $usbdir/idVendor)
-       idProduct=$(cat $usbdir/idProduct)
-       if [ $idVendor != $lattice_idVendor ] || [ $idProduct != $lattice_idProduct ]; then
-           continue
-       fi
-       dev=$(udevadm info -rq name "/sys/dev/char/$devid/")
-   done
+    dev="/dev/ttyHX8K"
 fi
 
-if [ $? != 0 ] || [ -z $dev ]; then
-    echo "ERROR: Could not find HX8K breakout board ttyUSB device"
+if [ ! -e "$dev" ]; then
+    echo "ERROR: Invalid ttyUSB device"
+    echo " * Is your HX8K breakout board plugged in?"
+    echo " * Have you added the following udev rule:"
+    echo "   SUBSYSTEM==\"tty\",ATTRS{idVendor}==\"0403\",ATTRS{idProduct}==\"6010\",ATTRS{product}==\"Lattice FTUSB Interface Cable\", SYMLINK+=\"ttyHX8K\""
+    echo " * Have you supplied the correct path?"
     exit 255
 fi
 

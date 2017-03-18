@@ -1,16 +1,28 @@
 <?xml version="1.0"?>
+<!--
+  BF2HW
+  Copyright (C) 2017  Christian Fibich
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 3 of the License, or
+  (at your option) any later version.
+-->
+
+
 <technology>
   <library>
     <name>BF2HW_FU</name>
     <cell>
       <name>bambu_putchar</name>
-      <operation operation_name="bambu_putchar"/>
+      <!-- bounded="0" makes the FU blocking -->
+      <operation operation_name="bambu_putchar" bounded="0" />
       <circuit>
         <component_o id="bambu_putchar">
           <description>This component is a FIFO stdout interface</description>
           <copyright>Copyright (C) 2017 Christian Fibich</copyright>  
           <authors>Christian Fibich</authors> 
-          <license>WTFPL</license>
+          <license>GPLv3</license>
           <structural_type_descriptor id_type="bambu_putchar"/>
           <port_o id="clock" dir="IN" is_clock="1">
             <structural_type_descriptor type="BOOL" size="1"/>
@@ -27,10 +39,6 @@
             <connected_objects/>
           </port_o>
           <port_o id="c" dir="IN">
-            <structural_type_descriptor type="UINT" size="8"/>
-            <connected_objects/>
-          </port_o>
-          <port_o id="return_port" dir="OUT">
             <structural_type_descriptor type="UINT" size="8"/>
             <connected_objects/>
           </port_o>
@@ -52,13 +60,14 @@
       </cell>
       <cell>
       <name>bambu_getchar</name>
-      <operation operation_name="bambu_getchar"/>
+      <!-- bounded="0" makes the FU blocking -->
+      <operation operation_name="bambu_getchar" bounded="0"/>
       <circuit>
         <component_o id="bambu_getchar">
           <description>This component is a FIFO stdin interface</description>
           <copyright>Copyright (C) 2017 Christian Fibich</copyright>  
           <authors>Christian Fibich</authors> 
-          <license>WTFPL</license>
+          <license>GPLv3</license>
           <structural_type_descriptor id_type="bambu_getchar"/>
           <port_o id="clock" dir="IN" is_clock="1">
             <structural_type_descriptor type="BOOL" size="1"/>
@@ -75,7 +84,7 @@
             <connected_objects/>
           </port_o>
           <port_o id="return_port" dir="OUT">
-            <structural_type_descriptor type="UINT" size="16"/>
+            <structural_type_descriptor type="UINT" size="8"/>
             <connected_objects/>
           </port_o>
           <port_o id="RX_VALID" dir="IN" is_global="1" is_extern="1">
